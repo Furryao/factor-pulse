@@ -20,6 +20,8 @@ jobs:
       - uses: actions/checkout@v6
       - name: Extract website
         run: unzip site.zip -d public-site
+      - name: Include investor edition
+        run: cp -R investor public-site/investor
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
         with:
