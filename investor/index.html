@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="从追涨、等反弹、找便宜等熟悉的投资行为出发，看懂背后的股票特点与历史证据。">
+  <meta name="theme-color" content="#163f37">
+  <title>看懂市场 · Factor Pulse 投资者版</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="#"><span class="brand-symbol">因</span><span>Factor Pulse <small>看懂市场</small></span></a><nav aria-label="主导航"><a class="nav-link active" href="#overview">市场观察</a><a class="nav-link" href="#explore">行为解读</a><a class="nav-link" href="#reading">怎么看数据</a></nav><a class="pro-link" href="https://furryao.github.io/factor-pulse/" target="_blank" rel="noopener">专业版 <span>↗</span></a></header>
+  <main>
+    <section id="overview" class="intro wrap">
+      <div class="edition"><span></span> FACTOR PULSE / 投资者版</div>
+      <div class="intro-heading"><div><h1>从熟悉的行为，<br>看懂市场的偏好<span>。</span></h1><p>追涨、等反弹、找便宜……把你的投资直觉，放到历史数据里看一看。</p></div><div class="snapshot"><span>本页使用历史快照</span><strong>2026.10.09</strong><small>分析范围 · 沪深主板</small></div></div>
+      <div class="context-bar"><div class="segmented" aria-label="观察频率"><button data-mode="weekly" aria-pressed="true">按周看</button><button data-mode="monthly" aria-pressed="false">按月看</button></div><p id="window-caption">正在读取历史记录…</p><button class="quiet-button" id="data-note">数据到哪一天？ <span>ⓘ</span></button></div>
+      <div class="overview-card" id="overview-card" aria-live="polite"><p>正在加载现有研究快照…</p></div>
+      <div class="takeaway"><span class="takeaway-mark">↳</span><p><strong>先理解市场，再审视自己的直觉。</strong>这里比较不同特点的股票在过去的表现，帮助理解行情；分组差异不等于个人投资收益。</p></div>
+    </section>
+
+    <section id="explore" class="wrap explore">
+      <div class="section-header"><div><span class="eyebrow">01 / 从你熟悉的行为开始</span><h2>你会怎样看一只股票？</h2><p>选择一种直觉，看看它背后的逻辑与证据。</p></div><div class="saved-filter"><button id="show-saved" aria-pressed="false">☆ 我的关注 <span id="saved-count">0</span></button></div></div>
+      <div id="behavior-grid" class="behavior-grid"></div>
+      <p class="selection-note">精选 6 个含义明确的观察指标 · 关注仅保存在当前浏览器</p>
+    </section>
+
+    <section id="story" class="story-section" aria-labelledby="story-title" tabindex="-1"><div class="wrap" id="story-content"></div></section>
+
+    <section id="reading" class="wrap reading"><div class="section-header"><div><span class="eyebrow">03 / 学会读这张地图</span><h2>三个问题，读懂页面里的数字。</h2></div><span class="reading-label">一分钟上手</span></div>
+      <div class="reading-grid"><article><span>01</span><h3>「领先」是跟谁比？</h3><p>每次按同一种股票特点分组，再比较高分组与低分组之后的表现。例如小市值指标比较市值较小与较大的两组。</p></article><article><span>02</span><h3>领先，代表赚到钱了吗？</h3><p>不一定。两组可能都在下跌，只是一组跌得更少。这里展示扣除估算成本后的收益差，以「百分点」表示。</p></article><article><span>03</span><h3>最近领先，还会持续吗？</h3><p>历史结果无法保证下一期。看完近期数字，也要看看完整历史里领先与落后的交替，避免只看最近一次。</p></article></div>
+      <details class="method" id="method"><summary><span>数据来源与使用边界</span><span class="expand-icon">＋</span></summary><div><p>本版使用原 Factor Pulse 已发布研究快照，输入数据截至 <strong>2026-10-09</strong>，不是实时行情。周度完整结果最新对应 2026-09-24 信号，月度完整结果最新对应 2026-08-31 信号；之后尚未完整的观察未混入比较。</p><p>近期比较分别采用最近 4 个完整周度信号、3 个完整月度信号的成本后分组收益差算术平均。「领先次数」只统计该收益差大于零的期数，不是预测成功概率，也不是原专业版同时要求排序关联为正的有效性指标。</p><p>历史股票范围使用事件日期近似，未完成严格历史时点验证。这些结果适合观察和解释，尚不能用来证明策略可实际获利。行为解释是可能机制，并不证明因果关系；页面不识别买卖资金的身份。</p><p>本版精选 6 个独立指标，并非全市场排名。图表展示信号日期所对应的后续完整收益比较；按周与按月使用不同持有窗口，数值不能直接横向比较。仅改变展示方式，未修改原始收益数据。</p><a href="https://furryao.github.io/factor-pulse/" target="_blank" rel="noopener">查看专业版研究口径 ↗</a></div></details>
+    </section>
+  </main>
+  <footer class="wrap"><a class="brand" href="#"><span class="brand-symbol">因</span><span>Factor Pulse</span></a><p>把投资直觉，变成可以观察的问题。</p><span>投资者版 · 独立设计</span></footer>
+  <div class="toast" role="status" id="toast"></div>
+  <noscript><p class="wrap">请开启 JavaScript 以查看历史比较和行为解释。</p></noscript>
+  <script src="./app.js" defer></script>
+</body></html>
