@@ -6,3 +6,10 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 .steps p{font-size:14px}.card-description{font-size:13px}.overview-copy>p{font-size:13px}.reading-grid p{font-size:13px}.utility p{font-size:12px}.trap p{font-size:12px}
 @media(max-width:700px){.intro-heading p{font-size:14px}.overview-copy>p{font-size:13px}.takeaway{font-size:12px}.section-header p{font-size:12px}.behavior-grid{grid-template-columns:1fr}.behavior-card{padding:19px 20px}.card-head{margin-bottom:10px}.card-family{font-size:12px}.card-icon{width:33px;height:33px}.card-title{font-size:21px}.card-description{font-size:13px;min-height:0;margin:7px 0 14px}.card-result{display:flex;font-size:11px}.card-result strong{font-size:12px}.card-result>div:last-child{display:block;margin:0}.mini-dots{margin-bottom:5px}.card-open{font-size:12px}.selection-note{font-size:10px}.steps h3{font-size:14px}.steps p{font-size:14px}.trap p,.utility p{font-size:13px}.trap strong,.utility h4{font-size:12px}.reading-grid p{font-size:13px}.method{font-size:12px}.detail-topline h3{font-size:13px}.stat-row small{font-size:11px}.chart-caption{font-size:11px}.chart-readout{font-size:11px}}
+
+/* History controls reflect the available observations for each behavior. */
+.chart-range{flex-wrap:wrap;justify-content:flex-end}
+.chart-range button:disabled{color:#92988b;background:#f1f1ec;cursor:not-allowed;filter:none}
+.history-coverage{font-size:11px;color:#5c7054;line-height:1.8;margin:12px 0 0}
+.history-coverage span{display:block;color:#7b826f;font-size:10px}
+@media(max-width:700px){.chart-controls{align-items:flex-start;flex-direction:column}.chart-range{justify-content:flex-start}.history-coverage,.history-coverage span{font-size:11px}}
