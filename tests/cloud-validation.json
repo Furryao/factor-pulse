@@ -1,0 +1,42 @@
+{
+  "status": "PASS",
+  "asOf": "2026-10-23",
+  "new_release": false,
+  "modes": {
+    "weekly": {
+      "min_coverage": 0.9990141307919816,
+      "min_names": 2268,
+      "historical_replay": "PASS",
+      "excluded": {
+        "ineligible": 3274,
+        "unknown_factor_state": 1806,
+        "missing_score": 1806,
+        "missing_forward_return": 42
+      }
+    },
+    "monthly": {
+      "min_coverage": 0.9967159277504105,
+      "min_names": 2264,
+      "historical_replay": "PASS",
+      "excluded": {
+        "ineligible": 3239,
+        "unknown_factor_state": 1749,
+        "missing_score": 1749,
+        "missing_forward_return": 120
+      }
+    }
+  },
+  "requests": 732,
+  "receipts_sha256": "2a51756b51aa1c3a37b0104acf403e26a22ec2372fd19061df4051c1be9152fd",
+  "raw_data_published": false,
+  "historical_prefix_unchanged": true,
+  "validation_method": "Offline replay from existing validated Tushare partitions; no live GitHub data access yet",
+  "synthetic_tests": "4 passed",
+  "github_ci": {
+    "run_id": 39934803838,
+    "tests": "success",
+    "pages": "success",
+    "public_payload": "verified",
+    "live_refresh": "awaiting TUSHARE_TOKEN"
+  }
+}
