@@ -13,3 +13,26 @@
 .history-coverage{font-size:11px;color:#5c7054;line-height:1.8;margin:12px 0 0}
 .history-coverage span{display:block;color:#7b826f;font-size:10px}
 @media(max-width:700px){.chart-controls{align-items:flex-start;flex-direction:column}.chart-range{justify-content:flex-start}.history-coverage,.history-coverage span{font-size:11px}}
+
+/* More ideas, grouped by the question an investor wants to understand. */
+.explore-toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:-4px 0 22px}
+.topic-categories{display:flex;flex-wrap:wrap;gap:7px}
+.topic-categories button{border:1px solid var(--line);background:transparent;border-radius:24px;padding:7px 13px;color:#67785f;font-size:12px}
+.topic-categories button span{margin-left:8px;font-size:10px;opacity:.7}
+.topic-categories button[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+#topic-count{font-size:11px;color:var(--muted);white-space:nowrap}
+.new-topic{font-size:9px;border-radius:4px;padding:1px 6px;background:#e8eddf;color:#667c51}
+.behavior-card{display:flex;flex-direction:column}.card-result{margin-top:auto}
+.learning-result strong{color:#627254}.learning-count{font-size:10px;color:#8a927e;white-space:nowrap}
+.reading-questions{list-style:none;margin:20px 0;padding:0}
+.reading-questions li{display:flex;gap:15px;padding:18px 0;border-bottom:1px solid var(--line)}
+.reading-questions li:first-child{padding-top:0}.reading-questions li:last-child{border-bottom:0;padding-bottom:0}
+.reading-questions li>span{font:italic 21px var(--serif);color:#8c9c76}
+.reading-questions h4{font-size:14px;font-weight:500;margin:0 0 7px}
+.reading-questions p{font-size:12px;color:#74816b;line-height:1.9;margin:0}
+.evidence-status{background:#f2f3eb;border-radius:8px;padding:14px 16px;color:#728067}
+.evidence-status strong{font-size:12px;font-weight:500}.evidence-status p{font-size:11px;line-height:1.9;margin:5px 0 0}
+.related-topic{display:flex;justify-content:space-between;gap:12px;width:100%;text-align:left;border:0;border-top:1px solid var(--line);background:transparent;padding:15px 0 0;margin-top:18px;color:var(--green);font-size:12px}
+.formula a{text-decoration:underline;text-underline-offset:3px}
+.empty-state button{display:block;margin:12px auto 0;border:1px solid var(--line);border-radius:20px;background:var(--white);padding:6px 14px;color:var(--green)}
+@media(max-width:700px){.explore-toolbar{flex-direction:column;align-items:flex-start;gap:9px}.topic-categories{gap:6px}.topic-categories button{font-size:11px;padding:7px 10px}.reading-questions p{font-size:13px}.selection-note{text-align:left;line-height:1.9}}
