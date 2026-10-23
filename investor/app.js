@@ -38,7 +38,14 @@ function renderStory(){const t=getTopic(),f=md().factors[selected];
  renderChart();
 }
 function renderChart(){const rows=visiblePeriods(),max=Math.max(...rows.map(r=>Math.abs(r.spread)),0.001);$('#history-chart').innerHTML=`<div class="bar-chart" aria-label="${getTopic().name}历史分组收益差"><div class="zero-line"></div>${rows.map((r,i)=>`<button class="chart-bar ${r.spread<0?'negative':''}" data-bar="${i}" aria-label="观察起点 ${r.date}，后续收益差 ${valueText(r.spread)} 个百分点"><i style="height:${Math.abs(r.spread)/max*44}%"></i></button>`).join('')}</div><div class="chart-axis"><span>${dateLabel(rows[0].date)}</span><span>↑ 领先 · 0 · 落后 ↓</span><span>${dateLabel(rows.at(-1).date)}</span></div><p class="chart-readout" id="chart-readout">点击或聚焦柱形，查看那一期的具体差异。</p><p class="chart-caption">横轴为观察起点；柱形表示之后一段持有期的两组表现差异。绿色领先，棕色落后。区间切换仅改变历史图，上方近期比较窗口保持一致。${rows.length} 次完整观察；可用历史从 ${dateLabel(md().factors[selected].periods[0].date)} 开始。</p>`;}
-function render(){renderOverview();renderCards();renderStory();}
+function renderFreshness(){
+ $('#data-as-of').textContent=dateLabel(data.asOf);
+ const weekly=data.modes.weekly,monthly=data.modes.monthly;
+ $('#data-freshness').textContent=`行情数据截至 ${dateLabel(data.asOf)}。周度比较最新一期从 ${dateLabel(weekly.end)} 开始，后续表现已观察至 ${dateLabel(weekly.settledThrough||data.asOf)}；月度比较最新一期从 ${dateLabel(monthly.end)} 开始，已观察至 ${dateLabel(monthly.settledThrough||data.asOf)}。更新行情后，仍须等一整期观察结束，才能加入这里的比较。`;
+ const checked=data.updatedAt?new Intl.DateTimeFormat('zh-CN',{timeZone:'Asia/Shanghai',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false}).format(new Date(data.updatedAt)):'';
+ $('#refresh-policy').textContent=`${data.refreshPolicy||'校验通过后更新'}。节假日或数据未齐时保留上次完整结果。${checked?'最近核验：'+checked+'（北京时间）。':''}`;
+}
+function render(){renderFreshness();renderOverview();renderCards();renderStory();}
 function selectTopic(id){if(!topics.some(t=>t.id===id))return;selected=id;renderCards();renderStory();$('#story').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'start'});$('#story').focus({preventScroll:true});}
 function readBar(button){const r=visiblePeriods()[Number(button.dataset.bar)];if(!r)return;document.querySelectorAll('.chart-bar').forEach(b=>b.classList.toggle('current',b===button));$('#chart-readout').textContent=`观察起点 ${dateLabel(r.date)} · 后续完整一期 ${r.spread>=0?'领先':'落后'} ${Math.abs(r.spread*100).toFixed(2)} 个百分点（扣估算成本后）。`;}
 document.addEventListener('click',e=>{
@@ -54,4 +61,4 @@ document.addEventListener('click',e=>{
 document.addEventListener('focusin',e=>{if(e.target.matches('[data-bar]'))readBar(e.target);});
 document.addEventListener('pointerover',e=>{const b=e.target.closest('[data-bar]');if(b)readBar(b);});
 const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting)document.querySelectorAll('.nav-link').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+entry.target.id));});},{rootMargin:'-15% 0px -65% 0px'});['overview','explore','reading'].forEach(id=>observer.observe(document.getElementById(id)));
-fetch('./data.json').then(r=>{if(!r.ok)throw Error('load');return r.json();}).then(d=>{data=d;render();}).catch(()=>{$('#overview-card').innerHTML='<div class="overview-copy"><h2>这次没有读到数据</h2><p>请刷新页面再试。历史结果暂时不可用。</p></div>';$('#window-caption').textContent='数据加载失败';});
+fetch('./data.json',{cache:'no-cache'}).then(r=>{if(!r.ok)throw Error('load');return r.json();}).then(d=>{data=d;render();}).catch(()=>{$('#overview-card').innerHTML='<div class="overview-copy"><h2>这次没有读到数据</h2><p>请刷新页面再试。历史结果暂时不可用。</p></div>';$('#window-caption').textContent='数据加载失败';});
