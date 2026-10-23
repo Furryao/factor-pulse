@@ -5,7 +5,7 @@
   <meta name="description" content="从追涨、等反弹、找便宜等熟悉的投资行为出发，看懂背后的股票特点与历史证据。">
   <meta name="theme-color" content="#163f37">
   <title>看懂市场 · Factor Pulse 投资者版</title>
-  <link rel="icon" href="./favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="./style.css?v=20261023-topics">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="./style.css?v=20261023-verified-only">
 </head>
 <body>
   <header class="topbar"><a class="brand" href="#"><span class="brand-symbol">因</span><span>Factor Pulse <small>看懂市场</small></span></a><nav aria-label="主导航"><a class="nav-link active" href="#overview">市场观察</a><a class="nav-link" href="#explore">行为解读</a><a class="nav-link" href="#reading">怎么看数据</a></nav><a class="pro-link" href="https://furryao.github.io/factor-pulse/" target="_blank" rel="noopener">专业版 <span>↗</span></a></header>
@@ -19,21 +19,20 @@
     </section>
 
     <section id="explore" class="wrap explore">
-      <div class="section-header"><div><span class="eyebrow">01 / 从你熟悉的行为开始</span><h2>你会怎样看一只股票？</h2><p>10 种投资想法，从看价格到看公司。新增分红、盈利能力、现金流与负债解读。</p></div><div class="saved-filter"><button id="show-saved" aria-pressed="false">☆ 我的关注 <span id="saved-count">0</span></button></div></div>
-      <div class="explore-toolbar"><div id="topic-categories" class="topic-categories" role="group" aria-label="按投资想法分类"></div><span id="topic-count" role="status"></span></div>
+      <div class="section-header"><div><span class="eyebrow">01 / 从你熟悉的行为开始</span><h2>你会怎样看一只股票？</h2><p>选择一种直觉，看看它背后的逻辑与实际历史比较。</p></div><div class="saved-filter"><button id="show-saved" aria-pressed="false">☆ 我的关注 <span id="saved-count">0</span></button></div></div>
       <div id="behavior-grid" class="behavior-grid"></div>
-      <p class="selection-note">6 项已有历史比较 · 4 项新增逻辑解读，暂无历史比较 · 关注仅保存在当前浏览器</p>
+      <p class="selection-note">仅展示已有历史比较的 6 项指标 · 关注仅保存在当前浏览器</p>
     </section>
 
     <section id="story" class="story-section" aria-labelledby="story-title" tabindex="-1"><div class="wrap" id="story-content"></div></section>
 
     <section id="reading" class="wrap reading"><div class="section-header"><div><span class="eyebrow">03 / 学会读这张地图</span><h2>三个问题，读懂页面里的数字。</h2></div><span class="reading-label">一分钟上手</span></div>
       <div class="reading-grid"><article><span>01</span><h3>「领先」是跟谁比？</h3><p>每次按同一种股票特点分组，再比较高分组与低分组之后的表现。例如小市值指标比较市值较小与较大的两组。</p></article><article><span>02</span><h3>领先，代表赚到钱了吗？</h3><p>不一定。两组可能都在下跌，只是一组跌得更少。这里展示扣除估算成本后的收益差，以「百分点」表示。</p></article><article><span>03</span><h3>最近领先，还会持续吗？</h3><p>历史结果无法保证下一期。看完近期数字，也要看看完整历史里领先与落后的交替，避免只看最近一次。</p></article></div>
-      <details class="method" id="method"><summary><span>数据来源与使用边界</span><span class="expand-icon">＋</span></summary><div><p id="data-freshness">正在读取数据日期…</p><p id="refresh-policy"></p><p>近期比较分别采用最近 4 个完整周度信号、3 个完整月度信号的成本后分组收益差算术平均。「领先次数」只统计该收益差大于零的期数，不是预测成功概率，也不是原专业版同时要求排序关联为正的有效性指标。</p><p>历史股票范围使用事件日期近似，未完成严格历史时点验证。这些结果适合观察和解释，尚不能用来证明策略可实际获利。行为解释是可能机制，并不证明因果关系；页面不识别买卖资金的身份。</p><p>本版介绍 10 种投资想法，其中 6 项提供历史比较，新增的分红、盈利能力、经营现金流和负债负担仅提供逻辑解读，不参与市场快照或表现排名。图表展示信号日期所对应的后续完整收益比较；按周与按月使用不同持有窗口，数值不能直接横向比较。沿用专业版的计算方法，新增观察须完成持有期并通过数据核验。</p><a href="https://furryao.github.io/factor-pulse/" target="_blank" rel="noopener">查看专业版研究口径 ↗</a></div></details>
+      <details class="method" id="method"><summary><span>数据来源与使用边界</span><span class="expand-icon">＋</span></summary><div><p id="data-freshness">正在读取数据日期…</p><p id="refresh-policy"></p><p>近期比较分别采用最近 4 个完整周度信号、3 个完整月度信号的成本后分组收益差算术平均。「领先次数」只统计该收益差大于零的期数，不是预测成功概率，也不是原专业版同时要求排序关联为正的有效性指标。</p><p>历史股票范围使用事件日期近似，未完成严格历史时点验证。这些结果适合观察和解释，尚不能用来证明策略可实际获利。行为解释是可能机制，并不证明因果关系；页面不识别买卖资金的身份。</p><p>本版精选 6 个独立指标，并非全市场排名。图表展示信号日期所对应的后续完整收益比较；按周与按月使用不同持有窗口，数值不能直接横向比较。沿用专业版的计算方法，新增观察须完成持有期并通过数据核验。</p><a href="https://furryao.github.io/factor-pulse/" target="_blank" rel="noopener">查看专业版研究口径 ↗</a></div></details>
     </section>
   </main>
   <footer class="wrap"><a class="brand" href="#"><span class="brand-symbol">因</span><span>Factor Pulse</span></a><p>把投资直觉，变成可以观察的问题。</p><span>投资者版 · 独立设计</span></footer>
   <div class="toast" role="status" id="toast"></div>
   <noscript><p class="wrap">请开启 JavaScript 以查看历史比较和行为解释。</p></noscript>
-  <script src="./app.js?v=20261023-topics" defer></script>
+  <script src="./app.js?v=20261023-verified-only" defer></script>
 </body></html>
